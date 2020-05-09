@@ -1,18 +1,21 @@
 {% include 'header.html' %}
 
-{% for speaker in collections.speakers %}
-	<article>
-		<a href="{{speaker.url | url}}">
-			{{speaker.data.name}}
-		</a>
-	</article>
-{% endfor %}
+<nav class="sidebar">
+	<h2>All Speakers</h2>
+	{% for speaker in collections.speakers %}
+		<article>
+			<a href="{{speaker.url | url}}">
+				{{speaker.data.name}}
+			</a>
+		</article>
+	{% endfor %}
+</nav>
 
-<article>
+<article class='content'>
 	<header>
-		<h1>{{name}}</h1>
+			<h1>{{name}}</h1>
 	</header>
-	<div>{{content | safe}}</div>
+		<div>{{content | safe}}</div>
 
 	<aside>
 		<h2>Talks</h2>
@@ -30,5 +33,6 @@
 		</ul>
 	</aside>
 </article>
+
 
 {% include 'footer.html' %}
